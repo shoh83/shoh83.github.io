@@ -13,6 +13,14 @@
 <script src="https://d3js.org/d3.v4.js"></script>
 
 <script>
+  // load OECD data
+  d3.csv("/OECD_forecast.csv", function (data) {
+    for (var i = 0; i < data.length; i++) {
+      console.log(data[i].MEASURE);
+      console.log(data[i].Value);
+    }
+  });
+
   // set the dimensions and margins of the graph
   var margin = { top: 10, right: 40, bottom: 30, left: 30 },
     width = 450 - margin.left - margin.right,
