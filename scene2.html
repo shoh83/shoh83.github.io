@@ -133,11 +133,21 @@
       .style("font-size", 18)
       .text("Projection May 2021, 2019Q4=100");
 
-    // Instruction
+    // Annotation
     svg
       .append("text")
       .attr("x", width / 2 + margin.left)
       .attr("y", 50)
+      .attr("text-anchor", "middle")
+      .style("font-family", "Helvetica")
+      .style("font-size", 16)
+      .text("GDP forecast started to reflect COVID-19 abnormally");
+
+    // Instruction
+    svg
+      .append("text")
+      .attr("x", width / 2 + margin.left)
+      .attr("y", 70)
       .attr("text-anchor", "middle")
       .style("font-family", "Helvetica")
       .style("font-size", 14)

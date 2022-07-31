@@ -133,6 +133,16 @@
       .style("font-size", 18)
       .text("Projection Nov 2019, 2019Q4=100");
 
+    // Annotation
+    svg
+      .append("text")
+      .attr("x", width / 2 + margin.left)
+      .attr("y", 50)
+      .attr("text-anchor", "middle")
+      .style("font-family", "Helvetica")
+      .style("font-size", 16)
+      .text("When things are normal, a GDP forecast cannot predict abnormally");
+
     // Instruction
     svg
       .append("text")
