@@ -69,7 +69,7 @@
     // var x = d3.scaleBand().domain(quarters).range([0, width]);
     // var y = d3.scaleLinear().domain([80, 120]).range([height, 0]);
 
-    var x = d3.scale.band().range([0, width]);
+    var x = d3.time.scale().range([0, width]);
     var y = d3.scale.linear().range([height, 0]);
 
     // Define the axes
