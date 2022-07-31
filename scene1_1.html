@@ -66,14 +66,17 @@
     ];
 
     // Set the ranges
-    var x = d3.scaleBand().domain(quarters).range([0, width]);
-    var y = d3.scaleLinear().domain([80, 120]).range([height, 0]);
+    // var x = d3.scaleBand().domain(quarters).range([0, width]);
+    // var y = d3.scaleLinear().domain([80, 120]).range([height, 0]);
+
+    var x = d3.scale.band().range([0, width]);
+    var y = d3.scale.linear().range([height, 0]);
 
     // Define the axes
     // var xAxis = d3.svg.axis().scaleBand(x).orient("bottom").ticks(5);
 
     // var yAxis = d3.svg.axis().scale(y).orient("left").ticks(5);
-    console.log("break0");
+    // console.log("break0");
     // Define the line
     var valueline = d3.svg
       .line()
