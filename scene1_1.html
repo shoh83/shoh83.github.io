@@ -159,7 +159,7 @@
         .attr("d", valueline(data))
         .attr(
           "transform",
-          "translate(" + (100 + width / 17 / 2) + "," + 0 + ")"
+          "translate(" + (100 + width / 17 / 2) + "," + 100 + ")"
         )
         .style("fill", "none")
         .style("stroke", "#CC0000")
@@ -180,7 +180,7 @@
         })
         .attr(
           "transform",
-          "translate(" + (100 + width / 17 / 2) + "," + 0 + ")"
+          "translate(" + (100 + width / 17 / 2) + "," + 100 + ")"
         )
         .style("fill", "#CC0000")
         .on("mouseover", function (d) {
@@ -204,7 +204,7 @@
       svg
         .append("g")
         .attr("class", "x axis")
-        .attr("transform", "translate(0," + height + ")")
+        .attr("transform", "translate(100," + 100 + height + ")")
         .call(d3.axisBottom(x));
 
       // Add the Y Axis
