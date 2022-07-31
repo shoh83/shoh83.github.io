@@ -65,6 +65,36 @@
       "2023-Q4",
     ];
 
+    // Title
+    svg
+      .append("text")
+      .attr("x", width / 2 + 100)
+      .attr("y", 60)
+      .attr("text-anchor", "middle")
+      .style("font-family", "Helvetica")
+      .style("font-size", 20)
+      .text("OECD GDP forecast");
+
+    // Sub-title
+    svg
+      .append("text")
+      .attr("x", width / 2 + 100)
+      .attr("y", 90)
+      .attr("text-anchor", "middle")
+      .style("font-family", "Helvetica")
+      .style("font-size", 18)
+      .text("Projection Nov 2019, 2019Q4=100");
+
+    // X label
+    svg
+      .append("text")
+      .attr("x", width / 2 + 100)
+      .attr("y", height + 150)
+      .attr("text-anchor", "middle")
+      .style("font-family", "Helvetica")
+      .style("font-size", 16)
+      .text("Quarters");
+
     // Set the ranges
     var x = d3.scaleBand().domain(quarters).range([0, width]);
     var y = d3.scaleLinear().domain([80, 120]).range([height, 0]);
@@ -126,7 +156,10 @@
         .append("path")
         .attr("class", "line")
         .attr("d", valueline(data))
-        .attr("transform", "translate(" + width / 17 / 2 + "," + 0 + ")")
+        .attr(
+          "transform",
+          "translate(" + (100 + width / 17 / 2) + "," + 0 + ")"
+        )
         .style("fill", "none")
         .style("stroke", "#CC0000")
         .style("stroke-width", "3");
@@ -144,7 +177,10 @@
         .attr("cy", function (d) {
           return y(d.value);
         })
-        .attr("transform", "translate(" + width / 17 / 2 + "," + 0 + ")")
+        .attr(
+          "transform",
+          "translate(" + (100 + width / 17 / 2) + "," + 0 + ")"
+        )
         .style("fill", "#CC0000")
         .on("mouseover", function (d) {
           div.transition().duration(200).style("opacity", 0.9);
