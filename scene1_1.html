@@ -41,7 +41,8 @@
 
   <script>
     // Set the dimensions of the canvas / graph
-    var margin = { top: 100, right: 50, bottom: 100, left: 50 },
+    var margin = { top: 50, right: 50, bottom: 50, left: 50 },
+      titleArea = 100,
       width = 1200 - margin.left - margin.right,
       height = 800 - margin.top - margin.bottom;
 
@@ -100,7 +101,7 @@
       .select("body")
       .append("svg")
       .attr("width", width + margin.left + margin.right)
-      .attr("height", height + margin.top + margin.bottom)
+      .attr("height", height + margin.top + margin.bottom + titleArea)
       .append("g")
       .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
@@ -108,7 +109,7 @@
     svg
       .append("text")
       .attr("x", width / 2 + margin.left)
-      .attr("y", 60)
+      .attr("y", 0)
       .attr("text-anchor", "middle")
       .style("font-family", "Helvetica")
       .style("font-size", 20)
@@ -118,7 +119,7 @@
     svg
       .append("text")
       .attr("x", width / 2 + margin.left)
-      .attr("y", 90)
+      .attr("y", 50)
       .attr("text-anchor", "middle")
       .style("font-family", "Helvetica")
       .style("font-size", 18)
@@ -128,7 +129,7 @@
     svg
       .append("text")
       .attr("x", width / 2 + margin.left)
-      .attr("y", height + margin.top + 50)
+      .attr("y", height + titleArea + 50)
       .attr("text-anchor", "middle")
       .style("font-family", "Helvetica")
       .style("font-size", 16)
@@ -138,17 +139,14 @@
     svg
       .append("g")
       .attr("class", "x axis")
-      .attr(
-        "transform",
-        "translate(" + margin.left + "," + (margin.top + height) + ")"
-      )
+      .attr("transform", "translate(0," + (titleArea + height) + ")")
       .call(d3.axisBottom(x));
 
     // Add the Y Axis
     svg
       .append("g")
       .attr("class", "y axis")
-      .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
+      .attr("transform", "translate(0," + titleArea + ")")
       .call(d3.axisLeft(y));
 
     // Get the data
@@ -160,7 +158,7 @@
         .attr("d", valueline(data))
         .attr(
           "transform",
-          "translate(" + (margin.left + width / 17 / 2) + "," + margin.top + ")"
+          "translate(" + width / 17 / 2 + "," + titleArea + ")"
         )
         .style("fill", "none")
         .style("stroke", "#CC0000")
@@ -181,7 +179,7 @@
         })
         .attr(
           "transform",
-          "translate(" + (margin.left + width / 17 / 2) + "," + margin.top + ")"
+          "translate(" + width / 17 / 2 + "," + titleArea + ")"
         )
         .style("fill", "#CC0000")
         .on("mouseover", function (d) {
