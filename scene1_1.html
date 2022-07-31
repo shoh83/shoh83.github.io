@@ -128,7 +128,7 @@
     svg
       .append("text")
       .attr("x", width / 2 + 100)
-      .attr("y", height + 10)
+      .attr("y", height + 120)
       .attr("text-anchor", "middle")
       .style("font-family", "Helvetica")
       .style("font-size", 16)
@@ -195,7 +195,7 @@
       svg
         .append("g")
         .attr("class", "x axis")
-        .attr("transform", "translate(0," + height + ")")
+        .attr("transform", "translate(0," + height + 100")")
         .call(d3.axisBottom(x));
 
       // Add the Y Axis
