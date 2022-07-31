@@ -41,7 +41,7 @@
 
   <script>
     // Set the dimensions of the canvas / graph
-    var margin = { top: 30, right: 20, bottom: 30, left: 50 },
+    var margin = { top: 100, right: 20, bottom: 100, left: 50 },
       width = 1200 - margin.left - margin.right,
       height = 800 - margin.top - margin.bottom;
 
@@ -195,7 +195,7 @@
       svg
         .append("g")
         .attr("class", "x axis")
-        .attr("transform", "translate(0," + height + 100")")
+        .attr("transform", "translate(0," + height + 100 + ")")
         .call(d3.axisBottom(x));
 
       // Add the Y Axis
