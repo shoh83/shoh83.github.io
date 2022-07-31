@@ -41,8 +41,8 @@
   <script>
     // Set the dimensions of the canvas / graph
     var margin = { top: 30, right: 20, bottom: 30, left: 50 },
-      width = 600 - margin.left - margin.right,
-      height = 270 - margin.top - margin.bottom;
+      width = 1200 - margin.left - margin.right,
+      height = 800 - margin.top - margin.bottom;
 
     // x domain range
     var quarters = [
@@ -140,7 +140,13 @@
         .on("mouseover", function (d) {
           div.transition().duration(200).style("opacity", 0.9);
           div
-            .html(d.time + "<br/>" + d.value)
+            .html(
+              "Projection: Nov 2019<br/>" +
+                "Time: " +
+                d.time +
+                "<br/>Value: " +
+                d.value
+            )
             .style("left", d3.event.pageX + "px")
             .style("top", d3.event.pageY - 28 + "px");
         })
