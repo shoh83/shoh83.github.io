@@ -208,8 +208,8 @@
       svg
         .append("g")
         .attr("class", "y axis")
-        .call(d3.axisLeft(y))
-        .attr("transform", "translate(100," + (100 + height) + ")");
+        .attr("transform", "translate(100," + (100 + height) + ")")
+        .call(d3.axisLeft(y));
     });
   </script>
 </body>
