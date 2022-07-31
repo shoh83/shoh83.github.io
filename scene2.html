@@ -38,6 +38,7 @@
 <body>
   <!-- load the d3.js library -->
   <h1>Scenes</h1>
+  <h2>Select a scene to see the chart and data</h2>
   <nav>
     <a href="scene1.html">Scene 1</a>
     <a href="scene2.html">Scene 2</a>
@@ -130,6 +131,16 @@
       .style("font-family", "Helvetica")
       .style("font-size", 18)
       .text("Projection May 2021, 2019Q4=100");
+
+    // Instruction
+    svg
+      .append("text")
+      .attr("x", width / 2 + margin.left)
+      .attr("y", 50)
+      .attr("text-anchor", "middle")
+      .style("font-family", "Helvetica")
+      .style("font-size", 14)
+      .text("Mouseover on a point to see detailed data");
 
     // X label
     svg
