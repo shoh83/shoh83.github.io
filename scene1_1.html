@@ -107,18 +107,18 @@
 
     // Get the data
     d3.csv("dataset1.csv", function (error, data) {
-      // Scale the range of the data
-      x.domain(
-        d3.extent(data, function (d) {
-          return d.time;
-        })
-      );
-      y.domain([
-        0,
-        d3.max(data, function (d) {
-          return d.value;
-        }),
-      ]);
+      // // Scale the range of the data
+      // x.domain(
+      //   d3.extent(data, function (d) {
+      //     return d.time;
+      //   })
+      // );
+      // y.domain([
+      //   0,
+      //   d3.max(data, function (d) {
+      //     return d.value;
+      //   }),
+      // ]);
       console.log("break1");
 
       // Add the valueline path.
